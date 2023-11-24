@@ -1,5 +1,5 @@
 from flask import Flask, render_template, request, flash
-from codigobien import Calculadora
+from codigocalculadora import Calculadora
 import secrets
 
 app = Flask(__name__)
@@ -7,7 +7,7 @@ app.secret_key = secrets.token_hex(16)
 
 @app.route('/home')
 def index():
-    return render_template('pag.html')
+    return render_template('pagCalculadora.html')
 
 
 @app.route('/calculadora', methods=['GET', 'POST'])
