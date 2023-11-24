@@ -8,9 +8,9 @@ body {
 #calculadora {
     max-width: 400px;
     margin: 50px auto;
-    background-color: #fff;
+    background-color: rgba(139, 236, 168, 0.425);
     padding: 20px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.705);
 }
 
 h1 {
@@ -41,28 +41,6 @@ button {
     border: none;
 }
 
-button:hover {
-    background-color: #45a049;
-}
-
-#result {
-    margin-top: 15px;
-    font-weight: bold;
-    color: #333;
-}
-
-#mensaje {
-    color: #d9534f;
-    font-weight: bold;
-    margin-top: 15px;
-}
-
-body {
-    font-family: 'Arial', sans-serif;
-    background-color: #f8f8f8;
-    margin: 0;
-    padding: 0;
-}
 
 h2 {
     color: #333;
@@ -81,6 +59,3 @@ a {
     font-weight: bold;
 }
 
-a:hover {
-    text-decoration: underline;
-}
