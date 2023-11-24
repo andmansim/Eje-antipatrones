@@ -14,10 +14,10 @@
 
         <div id="calculadora">
             <h1>Calculadora WEB</h1>
-            <form id="calculatorForm">
-                <input type="text" id="num1" placeholder="Número 1" required>
-                <input type="text" id="num2" placeholder="Número 2" required>
-                <select id="operador" required>
+            <form id="calculatorForm" action = '/calculadora' method = 'POST'>
+                <input type="text" id="num1" name='num1' placeholder="Número 1" required>
+                <input type="text" id="num2" name= 'num2'placeholder="Número 2" required>
+                <select id="operador" name='operador' required>
                     <option value="sumar">Sumar</option>
                     <option value="restar">Restar</option>
                     <option value="multiplicar">Multiplicar</option>

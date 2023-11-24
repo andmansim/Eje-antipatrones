@@ -13,9 +13,11 @@ def index():
 @app.route('/calculadora', methods=['GET', 'POST'])
 def calculadora():
     if request.method == 'POST':
-        num1 = request.form['num1']
-        num2 = request.form['num2']
-        operador = request.form['operador']
+        num1 = float(request.form.get('num1'))
+        print(num1)
+        num2 = float(request.form.get('num2'))
+        operador = request.form.get('operador')
+        print(operador)
         calculadora = Calculadora(num1, num2)
         if operador == 'sumar':
             resultado = calculadora.sumar()
