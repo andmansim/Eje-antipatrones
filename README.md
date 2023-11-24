@@ -1,3 +1,59 @@
 # Eje-antipatrones
 
 https://github.com/andmansim/Eje-antipatrones.git
+
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculadora WEB</title>
+  
+</head>
+
+<body>
+
+    <div id="calculadora">
+        <h1>Calculadora WEB</h1>
+
+        <input type="text" id="inputNumbers" placeholder="Introduce números o realiza operaciones binarias">
+
+        <div id="info"></div>
+
+        <div class="seccion" id="operadores">
+            <h2>Operadores Binarios</h2>
+            <button onclick="guardarOperador('+')">+</button>
+            <button onclick="guardarOperador('-')">-</button>
+            <button onclick="guardarOperador('*')">*</button>
+            <button onclick="guardarOperador('/')">/</button>
+            <button onclick="calcularResultado('')">=</button>
+        </div>
+
+        <div class="seccion" id="operadores-exponenciales">
+            <h2>Operadores Exponenciales</h2>
+            <button onclick="calcularCuadrado()">^2</button>
+            <button onclick="calcularCubo()">^3</button>
+        </div>
+
+        <div class="seccion" id="operaciones-csv">
+            <h2>Operaciones CSV</h2>
+            <button id="sumatorio" onclick="sumatorio()">Sumatorio</button>
+            <button id="ordenar" onclick="ordenar()">Ordenar</button>
+            <button id="revertir" onclick="revertir()">Revertir</button>
+            <button id="quitar" onclick="quitar()">Quitar Último</button>
+        </div>
+
+        <div class="seccion" id="operaciones-unitarias">
+            <h2>Operaciones Unitarias</h2>
+            <button id="modulo" onclick="mod()">Módulo</button>
+            <button id="factorial" onclick="fact()">Factorial</button>
+        </div>
+
+        
+
+        
+</body>
+
+</html>
