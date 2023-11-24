@@ -5,7 +5,7 @@ import secrets
 app = Flask(__name__)
 app.secret_key = secrets.token_hex(16)  
 
-@app.route('/')
+@app.route('/home')
 def index():
     return render_template('pag.html')
 
@@ -21,27 +21,24 @@ def calculadora():
         if operador == 'sumar':
             resultado = calculadora.sumar()
             mensaje = 'El resultado de la suma es: ' + str(resultado)
-            flash(mensaje, 'success')
             
         elif operador == 'restar':
             resultado = calculadora.restar(num1, num2)
             mensaje = 'El resultado de la resta es: ' + str(resultado)
-            flash(mensaje, 'success')
             
         elif operador == 'multiplicar':
             resultado = calculadora.multiplicar(num1, num2)
             mensaje = 'El resultado de la multiplicacion es: ' + str(resultado)
-            flash(mensaje, 'success')
             
         elif operador == 'dividir':
             resultado = calculadora.dividir(num1, num2)
             mensaje = 'El resultado de la division es: ' + str(resultado)
-            flash(mensaje, 'success')            
+            
         else:
             mensaje = 'No se ha seleccionado una operacion'
-            flash(mensaje, 'success')
-        print(resultado)
-    return mensaje
+            
+        flash(mensaje, 'success')
+    return render_template('mensaje_resultados.html', mensaje=mensaje)
 
 if __name__ == '__main__':
     app.run(debug=True)
