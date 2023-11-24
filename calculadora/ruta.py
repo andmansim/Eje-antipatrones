@@ -40,5 +40,3 @@ def calculadora():
         flash(mensaje, 'success')
     return render_template('mensaje_resultados.html', mensaje=mensaje)
 
-if __name__ == '__main__':
-    app.run(debug=True)
