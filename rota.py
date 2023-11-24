@@ -19,23 +19,23 @@ def calculadora():
         if operador == 'suma':
             resultado = calculadora.sumar()
             flash('El resultado de la suma es: ' + str(resultado))
-            return redirect(url_for('calculadora'))
+            
         elif operador == 'resta':
             resultado = calculadora.restar(num1, num2)
             flash('El resultado de la resta es: ' + str(resultado))
-            return redirect(url_for('calculadora'))
+            
         elif operador == 'multiplicar':
             resultado = calculadora.multiplicar(num1, num2)
             flash('El resultado de la multiplicacion es: ' + str(resultado))
-            return redirect(url_for('calculadora'))
+            
         elif operador == 'dividir':
             resultado = calculadora.dividir(num1, num2)
             flash('El resultado de la division es: ' + str(resultado))
-            return redirect(url_for('calculadora'))
+            
         else:
             flash('No se ha seleccionado una operacion')
-            return redirect(url_for('calculadora'))
-    return render_template('calculadora.html')
+            
+    return render_template('pag.html')
 
 if __name__ == '__main__':
     app.run(debug=True)
