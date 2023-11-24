@@ -1,4 +1,4 @@
-from flask import Flask, render_template, request, redirect, url_for, flash
+from flask import Flask, render_template, request, flash
 from codigobien import Calculadora
 
 app = Flask(__name__)
@@ -9,31 +9,35 @@ def index():
     return render_template('pag.html')
 
 
-@app.route('calculadora', methods=['GET', 'POST'])
+@app.route('/calculadora', methods=['GET', 'POST'])
 def calculadora():
     if request.method == 'POST':
         num1 = request.form['num1']
         num2 = request.form['num2']
         operador = request.form['operador']
         calculadora = Calculadora(num1, num2)
-        if operador == 'suma':
+        if operador == 'sumar':
             resultado = calculadora.sumar()
-            flash('El resultado de la suma es: ' + str(resultado))
+            mensaje = 'El resultado de la suma es:' + str(resultado)
+            flash(mensaje, 'success')
             
-        elif operador == 'resta':
+        elif operador == 'restar':
             resultado = calculadora.restar(num1, num2)
-            flash('El resultado de la resta es: ' + str(resultado))
+            mensaje = 'El resultado de la resta es:' + str(resultado)
+            flash(mensaje, 'success')
             
         elif operador == 'multiplicar':
             resultado = calculadora.multiplicar(num1, num2)
-            flash('El resultado de la multiplicacion es: ' + str(resultado))
+            mensaje = 'El resultado de la multiplicacion es:' + str(resultado)
+            flash(mensaje, 'success')
             
         elif operador == 'dividir':
             resultado = calculadora.dividir(num1, num2)
-            flash('El resultado de la division es: ' + str(resultado))
-            
+            mensaje = 'El resultado de la division es:' + str(resultado)
+            flash(mensaje, 'success')            
         else:
-            flash('No se ha seleccionado una operacion')
+            mensaje = 'No se ha seleccionado una operacion'
+            flash(mensaje, 'success')
             
     return render_template('pag.html')
 
