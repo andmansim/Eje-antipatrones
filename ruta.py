@@ -13,30 +13,24 @@ def index():
 @app.route('/calculadora', methods=['GET', 'POST'])
 def calculadora():
     if request.method == 'POST':
-        num1 = float(request.form.get('num1'))
-        num2 = float(request.form.get('num2'))
+        num1 = request.form.get('num1')
+        num2 = request.form.get('num2')
         operador = request.form.get('operador')
-        
+
         calculadora = Calculadora(num1, num2)
         if operador == 'sumar':
             resultado = calculadora.sumar()
-            mensaje = 'El resultado de la suma es: ' + str(resultado)
-            
+ 
         elif operador == 'restar':
             resultado = calculadora.restar()
-            mensaje = 'El resultado de la resta es: ' + str(resultado)
-            
+
         elif operador == 'multiplicar':
             resultado = calculadora.multiplicar()
-            mensaje = 'El resultado de la multiplicacion es: ' + str(resultado)
             
         elif operador == 'dividir':
             resultado = calculadora.dividir()
-            mensaje = 'El resultado de la division es: ' + str(resultado)
-            
-        else:
-            mensaje = 'No se ha seleccionado una operacion'
-            
+        
+        mensaje = 'El resultado es: ' + str(resultado)
         flash(mensaje, 'success')
     return render_template('mensaje_resultados.html', mensaje=mensaje)
 

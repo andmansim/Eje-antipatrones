@@ -6,39 +6,40 @@ class Calculadora:
 
     def sumar (self):
         try: 
-            self.num1 = int(self.num1)
-            self.num2 = int(self.num2)
+            self.num1 = float(self.num1)
+            self.num2 = float(self.num2)
             suma = self.num1 + self.num2
             return suma
         except ValueError:
-            print("No se puede sumar letras")
+            return("No se puede sumar letras")
     def restar (self):
         try:
-            self.num1 = int(self.num1)
-            self.num2 = int(self.num2)
+            self.num1 = float(self.num1)
+            self.num2 = float(self.num2)
             restar = self.num1 - self.num2
             return restar
         except ValueError:
-            print("No se puede restar letras")
+            return("No se puede restar letras")
         
     def multiplicar (self):
         try: 
-            self.num1 = int(self.num1)
-            self.num2 = int(self.num2)
+            self.num1 = float(self.num1)
+            self.num2 = float(self.num2)
             multiplicar = self.num1 * self.num2
             return multiplicar
         except ValueError:
-            print("No se puede multiplicar letras")
+            return("No se puede multiplicar letras")
+        
     def dividir (self):
         try:
-            self.num1 = int(self.num1)
-            self.num2 = int(self.num2)
+            self.num1 = float(self.num1)
+            self.num2 = float(self.num2)
             if self.num2 != 0:
                 dividir = self.num1 / self.num2
                 return dividir
             else:
-                print("No se puede dividir entre cero.")
+                return("No se puede dividir entre cero.")
         except ValueError:
-            print("No se puede dividir letras")
+            return("No se puede dividir letras")
 
     
