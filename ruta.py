@@ -1,8 +1,9 @@
 from flask import Flask, render_template, request, flash
 from codigobien import Calculadora
+import secrets
 
 app = Flask(__name__)
-
+app.secret_key = secrets.token_hex(16)  
 
 @app.route('/')
 def index():
