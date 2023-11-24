@@ -23,15 +23,15 @@ def calculadora():
             mensaje = 'El resultado de la suma es: ' + str(resultado)
             
         elif operador == 'restar':
-            resultado = calculadora.restar(num1, num2)
+            resultado = calculadora.restar()
             mensaje = 'El resultado de la resta es: ' + str(resultado)
             
         elif operador == 'multiplicar':
-            resultado = calculadora.multiplicar(num1, num2)
+            resultado = calculadora.multiplicar()
             mensaje = 'El resultado de la multiplicacion es: ' + str(resultado)
             
         elif operador == 'dividir':
-            resultado = calculadora.dividir(num1, num2)
+            resultado = calculadora.dividir()
             mensaje = 'El resultado de la division es: ' + str(resultado)
             
         else:
